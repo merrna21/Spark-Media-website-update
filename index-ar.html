@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="سبارك ميديا - وكالة إنتاج مرئي وإعلانات" />
+  <meta name="author" content="Spark Media" />
+  <title>سبارك ميديا</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Google fonts (Arabic friendly) -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+  <!-- SimpleLightbox plugin CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+
+  <!-- Core theme CSS (make sure this file exists) -->
+  <!-- kept id="main-style" so language switcher (if used) يقدر يغير الـ href -->
+  <link id="main-style" href="css/styles.css" rel="stylesheet" />
+
+  <style>
+    /* محليّات RTL + تحسينات للخطوط */
+    body { font-family: "Tajawal", sans-serif; direction: rtl; }
+    h1,h2,h3,h4 { font-weight: 800; }
+    .section-title { font-size: 1.75rem; }
+    .masthead { padding-top: 6.5rem; padding-bottom: 5rem; background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url("images/background.jpg") center/cover no-repeat; }
+    .text-white-75 { color: rgba(255,255,255,0.85) !important; }
+
+    /* فيديوهات Featured + Portfolio تنسيق */
+    .video-box { background:#fff; border-radius: .5rem; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+    .video-box:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,.12); }
+
+    /* portfolio grid spacing */
+    #portfolio .container { max-width: 1200px; }
+
+    /* modal video (كبرة واضحة بدون scroll) */
+    .modal-video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+    .modal-video-wrap iframe, .modal-video-wrap video { position: absolute; top:0; left:0; width:100%; height:100%; }
+
+    /* contact buttons rtl-centered */
+    #contact .col-md-3 a { text-align: center; display:block; }
+
+    /* زرار See More يطابق باقي الأزرار */
+    .see-more-btn { border-radius: .5rem; padding: .6rem 1.4rem; font-weight:700; }
+
+    /* service boxes hover effect */
+    .service-box { transition: transform .25s, box-shadow .25s; }
+    .service-box:hover { transform: translateY(-8px); box-shadow: 0 14px 30px rgba(0,0,0,.08); }
+
+    /* تصغير ارتفاع النافبار شوية */
+    #mainNav { padding-top: .6rem; padding-bottom: .6rem; }
+    #mainNav .navbar-brand img { margin-inline-start: .5rem; }
+
+    /* تحسينات للعناوين تحت الفيديو */
+    .portfolio-caption h5 { font-weight: 700; margin-bottom: 0.25rem; }
+    .portfolio-caption p { color: #6c757d; margin-bottom: 0; }
+
+    /* عند فتح المودال امنع scroll في الصفحة */
+    body.modal-open { overflow: hidden; }
+    .video-title-link {
+  display: block;
+  margin-top: 8px;
+  font-family: "Cairo", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #087990;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.video-title-link:hover {
+  color: #055160;
+  text-decoration: underline;
+  transform: translateY(-2px);
+}
+
+  </style>
+</head>
+
+<body id="page-top">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand d-flex align-items-center" href="#page-top">
+        <img src="images/Logo.png" alt="Spark Media Logo" width="50" height="50" class="ms-2">
+        سبارك ميديا
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+              aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav me-auto my-2 my-lg-0">
+          <!-- رابط الرجوع للانجليزى -->
+          <li class="nav-item"><a href="index.html" class="nav-link">English</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">من نحن</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">خدماتنا</a></li>
+          <li class="nav-item"><a class="nav-link" href="#featured">فيديو مميز</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">أعمالنا</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">تواصل</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Masthead -->
+  <header class="masthead text-center text-white">
+    <div class="container px-4 px-lg-5 h-100">
+      <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center">
+        <div class="col-lg-8 align-self-end">
+          <h1 class="text-white font-weight-bold">مرحبًا بكم في وكالة سبارك ميديا للإنتاج الإعلامي</h1>
+          <hr class="divider" />
+        </div>
+        <div class="col-lg-8 align-self-baseline">
+          <p class="text-white-75 mb-5">علامتك التجارية تستحق التميّز — نصنع صورًا وفيديوهات وإعلانات تجعلها لا تُنسى. خلي قصتك تتحوّل لمحتوى يخطف الانتباه.</p>
+          <a class="btn btn-primary btn-xl" href="#about">ابدأ الآن</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="page-section bg-primary" id="about">
+    <div class="container px-4 px-lg-5 text-center">
+      <h2 class="text-white mb-4 fw-bold section-title">رؤيتك بعدستنا — نصمم هوية بصرية تترك أثر</h2>
+      <hr class="divider divider-light mx-auto" />
+      <div class="row gx-4 gx-lg-5 align-items-center mt-4">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <video controls class="w-100 rounded shadow" autoplay muted>
+            <source src="vedio/about us.mp4" type="video/mp4" />
+            متصفحك لا يدعم الفيديو
+          </video>
+        </div>
+        <div class="col-lg-6 text-start text-white">
+            <p class="about-text text-white-75" style="font-family:'Tajawal', sans-serif; font-size:1rem; line-height:1.9; text-align:justify; direction:rtl;">
+    <span class="fw-semibold text-white">سبارك ميديا</span> (<strong>أرسان خيرالله</strong>) شركة متخصصة في مجال 
+    <strong>التصوير، الإعلان، والإنتاج الفني.</strong><br><br>
+
+    <span class="fw-semibold">خدماتنا تشمل:</span><br>
+    • إعلانات تلفزيونية وصوتية<br>
+    • أفلام تسجيلية<br>
+    • أفلام روائية<br>
+    • موشن جرافيك<br>
+    • تغطية وتصوير وتوثيق فوتوغرافي وفيديو للمؤتمرات والافتتاحات<br><br>
+
+    لدينا <strong>خبرة تمتد لأكثر من 12 عامًا</strong> في مجال الإعلام والإعلان.  
+    وقد عملنا مع العديد من المنظمات في مجال التنمية المجتمعية كمستشارين لتوثيق المشاريع من خلال 
+    "قصص النجاح"، و"الأفلام الوثائقية"، و"الفيديوهات الإبداعية".<br><br>
+
+    <span class="fw-semibold">من أبرز شركائنا:</span><br>
+    حزب مستقبل وطن – الحزب المصري الديمقراطي – مؤسسة كاريتاس – بلان إنترناشونال إيجيبت – أوت ريتش إيجيبت – جمعية خير وبركة – جمعية سيدات الأعمال<br><br>
+
+    نفذنا العديد من الإعلانات التلفزيونية، والبرامج، والكليبات، والأفلام الروائية والتسجيلية 
+    من خلال <strong>فريق عمل محترف ومتخصص</strong> يعمل دائماً بروح واحدة لتحقيق أفضل النتائج وإرضاء عملائنا.<br><br>
+
+    هدفنا هو <strong>الابتكار والتطوير المستمر</strong> في المهارات الفنية والمعدات المستخدمة 
+    لإنتاج أفضل صورة بأفكار مختلفة ومميزة.
+  </p>
+</div>
+
+            <a class="btn btn-light btn-xl" href="#services">هل أنت مستعد؟</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="page-section" id="services">
+    <div class="container px-4 px-lg-5">
+      <h2 class="text-center mt-0">خدماتنا</h2>
+      <hr class="divider" />
+      <div class="row gx-4 gx-lg-5">
+        <div class="col-lg-6 col-md-6 text-center service-box">
+          <div class="mt-5">
+            <div class="mb-2"><i class="bi-camera-video fs-1 text-primary"></i></div>
+            <h3 class="h4 mb-2">فيديوهات ترويجية</h3>
+            <p class="text-muted mb-0">فيديوهات قصيرة تُبرز منتجك ورسالتك بطريقة جذب عالية.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 text-center service-box">
+          <div class="mt-5">
+            <div class="mb-2"><i class="bi-megaphone fs-1 text-primary"></i></div>
+            <h3 class="h4 mb-2">حملات إعلانية</h3>
+            <p class="text-muted mb-0">تصميم وتنفيذ حملات إعلانية مبدعة لزيادة الوعي والمبيعات.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 text-center service-box">
+          <div class="mt-5">
+            <div class="mb-2"><i class="bi-camera fs-1 text-primary"></i></div>
+            <h3 class="h4 mb-2">التصوير الفوتوغرافي</h3>
+            <p class="text-muted mb-0">صور احترافية لعلامتك التجارية، منتجاتك، وفعالياتك.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 text-center service-box">
+          <div class="mt-5">
+            <div class="mb-2"><i class="bi-camera-reels fs-1 text-primary"></i></div>
+            <h3 class="h4 mb-2">ريلز وإنشاء محتوى قصير</h3>
+            <p class="text-muted mb-0">مقاطع سريعة وعصرية لوسائل التواصل الاجتماعي تصل للجمهور بسرعة.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 text-center service-box mx-auto">
+          <div class="mt-5">
+            <div class="mb-2"><i class="bi-collection-play fs-1 text-primary"></i></div>
+            <h3 class="h4 mb-2">أفلام قصيرة</h3>
+            <p class="text-muted mb-0">حكايات مصورة قصيرة تقفز بعلامتك التجارية لمستوى فني.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Videos (ثلاثة فيديوهات قبل البورتفوليو) -->
+  <!-- فيديوهات مختارة -->
+<section id="featured" class="py-5" style="background-color:#f8f9fa;">
+    <div class="container">
+
+        <h2 class="text-center mb-5" style="color:#77ABB4; font-weight:700;">
+            فيديوهات مميزة
+        </h2>
+
+        <div class="row g-4">
+
+            <!-- فيديو 1 -->
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="video-box shadow-sm p-3 rounded">
+                    <div class="portfolio-item promo">
+                        <div class="ratio ratio-16x9 rounded">
+                            <iframe
+                                class="vimeo-hover"
+                                src="https://player.vimeo.com/video/1124568996?loop=1&muted=1&controls=0&title=0&byline=0&portrait=0"
+                                frameborder="0"
+                                allow="autoplay; fullscreen; picture-in-picture"
+                                allowfullscreen
+                                style="border:none;">
+                            </iframe>
+                        </div>
+                      <a 
+              href="https://vimeo.com/1124568996"
+              target="_blank"
+              class="video-title-link"
+            >
+             EAGLES PARADISE<br>
+             ABU SOMA
+            </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- فيديو 2 -->
+            <div class="col-lg-4 col-md-6 text-center">
+    <div class="video-box shadow-sm p-3 rounded">
+        <div class="portfolio-item promo">
+            <div class="ratio ratio-16x9 rounded">
+                <iframe
+                    class="vimeo-hover"
+                    src="https://player.vimeo.com/video/1039170281?loop=1&muted=1&controls=0&title=0&byline=0&portrait=0"
+                    frameborder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowfullscreen
+                    style="border:none;">
+                </iframe>
+            </div>
+            <a 
+              href="https://vimeo.com/1039170281"
+              target="_blank"
+              class="video-title-link"
+            >
+             AGRO LAND 
+            </a>
+        </div>
+    </div>
+</div>
+             <!-- فيدي2 -->
+              <div class="col-lg-4 col-md-6 text-center">
+    <div class="video-box shadow-sm p-3 rounded">
+        <div class="portfolio-item promo">
+            <div class="ratio ratio-16x9 rounded">
+                <iframe
+                    class="vimeo-hover"
+                    src="https://player.vimeo.com/video/1039094846?loop=1&muted=1&controls=0&title=0&byline=0&portrait=0"
+                    frameborder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowfullscreen
+                    style="border:none;">
+                </iframe>
+            </div>
+            <a 
+              href="https://vimeo.com/1039094846"
+              target="_blank"
+              class="video-title-link"
+            >
+             EAGLES PARADISE<br>
+             ABU SOMA
+            </a>
+
+        </div>
+    </div>
+</div>
+
+    </div>
+  </div>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+function initVimeoHover() {
+    if (typeof Vimeo === "undefined") {
+        setTimeout(initVimeoHover, 100);
+        return;
+    }
+
+    document.querySelectorAll('.vimeo-hover').forEach((iframe) => {
+        const player = new Vimeo.Player(iframe);
+
+        iframe.addEventListener('mouseenter', () => {
+            player.play();
+        });
+
+        iframe.addEventListener('mouseleave', () => {
+            player.pause();
+            player.setCurrentTime(0);
+        });
+
+        iframe.addEventListener('touchstart', () => {
+            player.play();
+        });
+    });
+}
+
+document.addEventListener("DOMContentLoaded", initVimeoHover);
+</script>
+
+</section>
+  <!-- الأعمال -->
+<section id="portfolio" class="py-5 text-center" style="background-color:#77ABB4 !important">
+    <div class="container">
+
+        <h2 class="mb-4" style="color:black; font-weight:700;">
+            أعمالنا
+        </h2>
+        <hr>
+
+        <!-- الفلاتر -->
+        <div class="mb-4">
+            <button class="btn btn-primary filter-btn active" data-filter="all">
+                الكل
+            </button>
+
+            <button class="btn btn-outline-primary filter-btn" data-filter="ads">
+                إعلانات
+            </button>
+
+            <button class="btn btn-outline-primary filter-btn" data-filter="reel-box">
+                ريلز
+            </button>
+
+            <button class="btn btn-outline-primary filter-btn" data-filter="documentaryvideo">
+                فيديوهات وثائقية
+            </button>
+        </div>
+
+        <!-- الفيديوهات -->
+        <div class="row g-4">
+
+            <!-- إعلانات -->
+            <div class="col-lg-4 col-md-6 portfolio-item ads">
+                <div class="ratio ratio-16x9">
+                    <iframe
+                        src="https://player.vimeo.com/video/492379064?controls=1"
+                        frameborder="0"
+                        allowfullscreen
+                        style="border:none;">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item ads">
+                <div class="ratio ratio-16x9">
+                    <iframe
+                        src="https://player.vimeo.com/video/1039089504?controls=1"
+                        frameborder="0"
+                        allowfullscreen
+                        style="border:none;">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item ads">
+                <div class="ratio ratio-16x9">
+                    <iframe
+                        src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fsparkmedia2020%2Fvideos%2F1537129717242544%2F&show_text=false"
+                        style="border:none;overflow:hidden;"
+                        frameborder="0"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- فيديوهات وثائقية -->
+            <div class="col-lg-4 col-md-6 portfolio-item documentaryvideo">
+                <div class="ratio ratio-16x9">
+                    <iframe
+                        src="https://player.vimeo.com/video/1039170281?controls=1"
+                        frameborder="0"
+                        allowfullscreen
+                        style="border:none;">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item documentaryvideo">
+                <div class="ratio ratio-16x9">
+                    <iframe
+                        src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/sparkmedia2020/videos/730752376619739/"
+                        style="border:none;overflow:hidden"
+                        frameborder="0"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- ريلز -->
+            <div class="col-lg-4 col-md-6 portfolio-item reel reel-box">
+                <div class="ratio ratio-16x9">
+                    <iframe
+                        src="https://player.vimeo.com/video/1149181799?controls=1"
+                        frameborder="0"
+                        allowfullscreen
+                        style="border:none;">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item reel reel-box">
+                <div class="ratio ratio-16x9">
+                    <iframe
+                        src="https://player.vimeo.com/video/1125913015?controls=1"
+                        frameborder="0"
+                        allowfullscreen
+                        style="border:none;">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item reel reel-box">
+                <div class="ratio ratio-16x9">
+                    <iframe
+                        src="https://player.vimeo.com/video/1041724909?controls=1"
+                        frameborder="0"
+                        allowfullscreen
+                        style="border:none;">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item reel reel-box">
+                <div class="ratio ratio-16x9">
+                    <iframe
+                        src="https://player.vimeo.com/video/1041724152?controls=1"
+                        frameborder="0"
+                        allowfullscreen
+                        style="border:none;">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item reel reel-box">
+                <div class="ratio ratio-16x9">
+                    <iframe
+                        src="https://player.vimeo.com/video/1041723323?controls=1"
+                        frameborder="0"
+                        allowfullscreen
+                        style="border:none;">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+  <!-- Contact -->
+  <section id="contact" class="page-section" style="background:#f8f9fa; background-image: url(images/contentus2.jpeg); background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+      <h2 class="mb-4 text-center" style="color:#333; font-weight:700;">📬 تواصل معنا</h2>
+
+      <div class="row justify-content-center">
+        <div class="col-md-3 col-6 mb-3">
+          <a href="https://www.facebook.com/share/1C8TQ9gkDa/" target="_blank"
+             style="display:block; background:#1877f2; color:#fff; padding:15px; border-radius:10px; font-weight:bold; text-decoration:none; box-shadow:0 4px 6px rgba(0,0,0,0.1); transition:0.3s;">
+            <i class="bi bi-facebook" style="font-size:1.5rem;"></i>
+            <div>فيسبوك</div>
+          </a>
+        </div>
+
+        <div class="col-md-3 col-6 mb-3">
+          <a href="https://wa.me/201202329258" target="_blank"
+             style="display:block; background:#25D366; color:#fff; padding:15px; border-radius:10px; font-weight:bold; text-decoration:none; box-shadow:0 4px 6px rgba(0,0,0,0.1); transition:0.3s;">
+            <i class="bi bi-whatsapp" style="font-size:1.5rem;"></i>
+            <div>واتساب</div>
+          </a>
+        </div>
+
+        <div class="col-md-3 col-6 mb-3">
+          <a href="mailto:sparkmedia211@gmail.com"
+             style="display:block; background:#77ABB4; color:#fff; padding:15px; border-radius:10px; font-weight:bold; text-decoration:none; box-shadow:0 4px 6px rgba(0,0,0,0.1); transition:0.3s;">
+            <i class="bi bi-envelope-fill" style="font-size:1.5rem;"></i>
+            <div>البريد الإلكتروني</div>
+          </a>
+        </div>
+
+        <div class="col-md-3 col-6 mb-3">
+          <a href="https://www.google.com/maps?q=الجيزة+شارع+خاتم+المرسالين" target="_blank"
+             style="display:block; background:#6c757d; color:#fff; padding:15px; border-radius:10px; font-weight:bold; text-decoration:none; box-shadow:0 4px 6px rgba(0,0,0,0.1); transition:0.3s;">
+            <i class="bi bi-geo-alt-fill" style="font-size:1.5rem;"></i>
+            <div>الجيزة، مصر</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-light py-5">
+    <div class="container px-4 px-lg-5">
+      <div class="small text-center text-muted">© 2025 سبارك ميديا - وكالة الإنتاج الإعلامي. جميع الحقوق محفوظة.</div>
+    </div>
+  </footer>
+
+  <!-- Video modal (يظهر عند الضغط على أي فيديو لو حبيت تستخدم المودال لاحقًا) -->
+  <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-body p-0">
+          <div class="modal-video-wrap">
+            <!-- iframe أو video سيُعاد تعيين src له ديناميكيًا -->
+            <iframe id="modalIframe" src="" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen style="display:none;"></iframe>
+            <video id="modalVideo" controls style="display:none;"></video>
+          </div>
+          <div class="p-3">
+            <h5 id="modalTitle" class="mb-1"></h5>
+            <p id="modalDescription" class="text-white-50 mb-0"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- SimpleLightbox plugin JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+
+  <script>
+    // See More: يمكنك ربطه لفتح صفحة جديدة أو كشف باقي الفيديوهات
+    document.getElementById('seeMoreBtn').addEventListener('click', function () {
+      // هنا ببساطة نوجه المستخدم لصفحة الأعمال الكاملة أو نكشف المزيد - حالياً أوجهه لذات القسم بكامل الفيديوهات
+      // لو عندك صفحة مستقلة للأعمال مثلا portfolio.html غيّر الرابط تحت
+      window.location.href = '#portfolio';
+    });
+
+    // Modal handling: لو حابة تضيف عناصر portfolio تفتح المودال عند الضغط
+    // عناصر الفيديوهات المحلية أو iframe يمكن إضافتها صفياً data-attributes: data-src, data-type(video/iframe), data-title, data-desc
+    const videoModalEl = document.getElementById('videoModal');
+    const bsModal = new bootstrap.Modal(videoModalEl, {keyboard:true});
+    const modalVideo = document.getElementById('modalVideo');
+    const modalIframe = document.getElementById('modalIframe');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDescription');
+
+    // delegate click on portfolio items (إذا جعلتي عناصر قابلة للنقرة أضيفي data-src)
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+      item.addEventListener('click', function(e){
+        // حاول نقرأ data-src من داخل العنصر (لو أضفتيه)
+        const src = this.dataset.src || this.querySelector('iframe')?.src || '';
+        const title = this.querySelector('.portfolio-caption h5')?.innerText || '';
+        const desc = this.querySelector('.portfolio-caption p')?.innerText || '';
+        if (!src) return; // لو مفيش مصدر ما نعملش حاجة
+
+        modalTitle.innerText = title;
+        modalDesc.innerText = desc;
+
+        // reset
+        modalVideo.style.display = 'none';
+        modalIframe.style.display = 'none';
+        modalVideo.pause();
+        modalVideo.removeAttribute('src');
+        modalIframe.removeAttribute('src');
+
+        if (src.includes('facebook.com') || src.includes('vimeo.com') || src.startsWith('http')) {
+          // iframe mode
+          modalIframe.style.display = 'block';
+          modalIframe.src = src;
+        } else {
+          // video mode (local file)
+          modalVideo.style.display = 'block';
+          modalVideo.src = src;
+          modalVideo.load();
+          modalVideo.play();
+        }
+
+        bsModal.show();
+      });
+    });
+
+    // تنظيف عند غلق المودال
+    videoModalEl.addEventListener('hidden.bs.modal', function () {
+      modalVideo.pause();
+      modalVideo.removeAttribute('src');
+      modalIframe.removeAttribute('src');
+      modalIframe.style.display = 'none';
+      modalVideo.style.display = 'none';
+    });
+
+    // Filter simple (عرض/اخفاء عناصر البورتفوليو)
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const f = this.dataset.filter;
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+          if (f === 'all') item.style.display = '';
+          else item.style.display = item.classList.contains(f) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+
+  <!-- Core theme JS (احتفظ به لو عندك سكربتات مخصصة) -->
+  <script src="js/scripts.js"></script>
+
+</body>
+</html>
